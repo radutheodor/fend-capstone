@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Travel App</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,600,700|Ranga:400,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/primitive-ui/dist/css/main.css" />
+    <!--
+    <link rel="stylesheet" href="styles/style.scss" />
+    -->
+  </head>
+  <body>
+    <header></header>
+    <main id="main">
+      <section id="trip-form">
+        <div class="small-container">
+          <label for="city">My Trip Location</label>
+          <input type="text" id="input-trip-city" onfocus="this.value=''" placeholder="Enter city name here" />
+        </div>
+        <div class="small-container">
+          <label for="date">Enter trip date:</label>
+          <input type="date" id="input-trip-date" min="2020-03-01" max="2022-12-31" />
+        </div>
+        <div class="small-container">
+          <button class="round-button" id="search-trip" type="submit" class="btn">Save Trip</button>
+          <button class="round-button" id="remove-all-trips" type="submit" class="btn">Clear Trips</button>
+        </div>
+      </section>
+      <section id="trip-details"></section>
+    </main>
+    <footer></footer>
+    <!--
+    <div id="app">
+      <div class="holder headline">
+        Weather Journal App
+      </div>
+      <div class="holder zip">
+        <label for="zip">Enter City name here</label>
+        <input type="text" id="zip" placeholder="Enter city name here" />
+      </div>
+      <div class="holder feel">
+        <label for="feelings">How are you feeling today?</label>
+        <textarea class="myInput" id="feelings" placeholder="Enter your feelings here" rows="9" cols="50"></textarea></br>
+        <button id="generate" type="submit">Search</button>
+      </div>
+      <div class="holder entry">
+        <label for="entryHolder">Most Recent Entry</label>
+        <div id="entryHolder">
+          <div id="date"></div>
+          <div id="temp"></div>
+          <div id="content"></div>
+        </div>
+      </div>
+    </div>
+    -->
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/service-worker.js");
+        });
+      }
+    </script>
+  </body>
+</html>
