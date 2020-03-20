@@ -27,18 +27,6 @@ function addTrip(event) {
       trip.image = response.url;
       tripMaker(trip);
     });
-  //   const weatherText = getWeather("http://localhost:5000/weather", { city: tripCity, date: tripDate }).then(response => {
-  //     return `Temperature: ${Math.round(`${response.temperature}`)}. ${response.summary}`;
-  //   });
-  //   const imageUrl = getImage("http://localhost:5000/image", { city: tripCity }).then(response => {
-  //     return response.url;
-  //   });
-  //   trip = {
-  //     city: tripCity,
-  //     date: tripCity,
-  //     weather: weatherText,
-  //     image: imageUrl
-  //   };
 }
 
 function refreshView() {}
@@ -64,7 +52,6 @@ const getWeather = async (url = "", data = {}) => {
   }
 };
 const getImage = async (url = "", data = {}) => {
-  console.log("Am intrat in CLIENT IMAGE");
   let myData = {};
   try {
     await fetch(url, {
@@ -77,7 +64,6 @@ const getImage = async (url = "", data = {}) => {
     })
       .then(response => response.json())
       .then(json => {
-        console.log("Am intrat in CLIENT RESPONSE");
         myData = json;
       });
     return myData;

@@ -56,14 +56,12 @@ async function getCityCoordinates(city) {
       await fetch(url)
         .then(response => response.json())
         .then(json => {
-          console.log(json);
           myData = {
             lat: json.geonames[0].lat,
             lng: json.geonames[0].lng,
             country: json.geonames[0].countryCode
           };
         });
-      console.log(myData);
       return myData;
     } catch (error) {
       console.log("Error occured while getting Geonames API data.", error);
@@ -91,13 +89,11 @@ async function getWeather(coordinates, date) {
       await fetch(url)
         .then(response => response.json())
         .then(json => {
-          console.log(json);
           myData = {
             temperature: json.currently.temperature,
             summary: json.hourly.summary
           };
         });
-      console.log(myData);
       return myData;
     } catch (error) {
       console.log("Error occured while getting Weather API data.", error);
@@ -115,7 +111,6 @@ app.post("/weather", async function(req, res) {
 
 // Get image from Pixabay
 async function getImageUrlForLocation(location) {
-  console.log("Am intrat in SERVER IMAGE");
   const url = encodeURI(`${pixabayUrl}/api/?key=${process.env.PIXABAY_API}&q=${location}&category=places`);
   let myData = {};
 
@@ -124,18 +119,15 @@ async function getImageUrlForLocation(location) {
       await fetch(url)
         .then(response => response.json())
         .then(json => {
-          console.log(json);
           myData = {
             url: json.hits[0].webformatURL
           };
         });
-      console.log(myData);
       return myData;
     } catch (error) {
       console.log("Error occured while getting Pixabay API data.", error);
     }
   };
-  console.log("Am terminat in SERVER IMAGE");
   return getData(url);
 }
 

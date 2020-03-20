@@ -7,8 +7,6 @@ let tripData = localStorage.getItem("trip") ? JSON.parse(localStorage.getItem("t
 localStorage.setItem("trips", JSON.stringify(tripData));
 
 const tripMaker = (trip = {}) => {
-  console.log("Am intrat in TRIP MAKER");
-  console.log(trip);
   inputTripCity.value = "";
   inputTripDate.value = "";
 

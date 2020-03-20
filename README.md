@@ -8,16 +8,32 @@ User provides a travel city and a travel date
 
 ![Travel App](src/media/travel_app.png)
 
-The app will return the weather forecast to location on the trip date and an image from the trip location
+The app will return the weather forecast to location on the trip date and an image from the trip location.
+
+The user can search for more trips, and use the "Clear Trips" button to remove all of the saved trips.
 
 ## Getting started
 
-Clone the project on your local machine. Make sure you have `node` installed and run the following commands
+Clone the project on your local machine
+
+`git clone https://github.com/radutheodor/fend-capstone.git`
+
+Make sure you have at least `node v 10+` installed
+
+```
+$ node -v
+v13.10.1
+```
+
+and run the following commands in the command line
 
 ```javascript
-npm i
-npm run build-prod
+npm i // installs all needed dependencies
+npm run build-prod // creates the /dist folder for production mode
+npm run start // starts the express server
 ```
+
+and finally open the app in browser as described below
 
 ### Open the app
 

@@ -11,10 +11,10 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "jest --forceExit --detectOpenHandles  --watchAll --maxWorkers=1",
+    "test": "jest --forceExit --maxWorkers=1",
     "start": "node src/server/server.js",
     "dev": "webpack-dev-server --config webpack.dev.js --open chrome",
-    "build": "rimraf ./dist && webpack --config webpack.prod.js && node src/server/server.js"
+    "build": "rimraf ./dist && webpack --config webpack.prod.js"
   },
   "keywords": [],
   "dependencies": {
